@@ -1,0 +1,5 @@
+CREATE TABLE wc2010_cards (
+	player_id INTEGER UNSIGNED NOT NULL,
+	game_id INTEGER UNSIGNED NOT NULL,
+	card ENUM("red", "yellow"),
+) ENGINE=INNODB;

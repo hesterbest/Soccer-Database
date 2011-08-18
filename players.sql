@@ -1,0 +1,9 @@
+CREATE TABLE players (
+	id INTEGER UNSIGNED auto_increment NOT NULL,
+	name CHARACTER VARYING(128) NOT NULL,
+	birthdate INT UNSIGNED NOT NULL,
+	position ENUM("GK", "DF", "MF", "FW"),
+	team_id INTEGER UNSIGNED NOT NULL,
+	FOREIGN KEY (team_id) REFERENCES wc2010_teams(id),
+	PRIMARY KEY (id, team_id)
+) ENGINE=INNODB;
