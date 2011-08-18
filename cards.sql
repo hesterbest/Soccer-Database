@@ -1,5 +1,12 @@
-CREATE TABLE wc2010_cards (
+CREATE TABLE cards (
+	id INTEGER UNSIGNED auto_increment NOT NULL,
+	team_id INTEGER UNSIGNED NOT NULL.
 	player_id INTEGER UNSIGNED NOT NULL,
 	game_id INTEGER UNSIGNED NOT NULL,
+	minute INTEGER UNSIGNED NOT NULL,
+	half INTEGER UNSIGNED NOT NULL,
 	card ENUM("red", "yellow"),
+	FOREIGN KEY (team_id) REFERENCES teams(id),
+	FOREIGN KEY (player_id) REFERENCES players(id),
+	FOREIGN KEY (game_id) REFERENCES games(id),
 ) ENGINE=INNODB;
